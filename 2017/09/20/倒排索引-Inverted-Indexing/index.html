@@ -101,12 +101,16 @@
 <meta property="og:site_name" content="Jade-Jade-Jade">
 <meta property="og:description" content="Definition of an Inverted indexAn inverted index is typically composed of a vector containing all distinct words of the text collection in lexicographical order (which is called the vocabulary) and f">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://note.youdao.com/favicon.ico">
-<meta property="og:updated_time" content="2017-09-21T02:03:59.000Z">
+<meta property="og:image" content="https://jade-jade-jade.github.io/image/InvertedIndex001.jpg">
+<meta property="og:image" content="https://Jade-Jade-Jade.github.io/image/InvertedIndex002.jpeg">
+<meta property="og:image" content="https://Jade-Jade-Jade.github.io/image/InvertedIndex003.jpeg">
+<meta property="og:image" content="https://Jade-Jade-Jade.github.io/image/InvertedIndex004.jpeg">
+<meta property="og:image" content="https://Jade-Jade-Jade.github.io/image/InvertedIndex005.jpeg">
+<meta property="og:updated_time" content="2017-09-21T02:13:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="倒排索引_Inverted_Indexing">
 <meta name="twitter:description" content="Definition of an Inverted indexAn inverted index is typically composed of a vector containing all distinct words of the text collection in lexicographical order (which is called the vocabulary) and f">
-<meta name="twitter:image" content="http://note.youdao.com/favicon.ico">
+<meta name="twitter:image" content="https://jade-jade-jade.github.io/image/InvertedIndex001.jpg">
 
 
 
@@ -399,84 +403,7 @@
 <li>不够灵活，不支持其他的操作，比如”Find the word Romans near countrymen”</li>
 </ul>
 <h5 id="方法二：-Term-Document-Incidence-Matrix"><a href="#方法二：-Term-Document-Incidence-Matrix" class="headerlink" title="方法二： Term-Document Incidence Matrix"></a>方法二： Term-Document Incidence Matrix</h5><p>用了  Bit Map 位运算的思想。构建如下矩阵，(t,d)=1代表term t在document d中出现，0代表没有出现。例如：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">-</th>
-<th style="text-align:center">Antony and Cleopatra</th>
-<th style="text-align:center">Julius Caesar</th>
-<th style="text-align:center">The Tempest</th>
-<th style="text-align:center">Hamlet</th>
-<th style="text-align:center">Othello</th>
-<th style="text-align:center">Macbeth</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Antony</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">Brutus</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">Caesar</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">Calpurnia</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">Cleopatra</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">Mercy</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">Worser</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
+<p><img src="https://jade-jade-jade.github.io/image/InvertedIndex001.jpg" alt="image"></p>
 <p>这样对于上一个查询，只需要</p>
 <p>110100 AND 110111 AND 10111 = 100100</p>
 <p>所以the two plays matching the query are:</p>
@@ -492,14 +419,14 @@
 <li>Insertion of terms into documents easy</li>
 <li>There is space overhead of pointers, though this is not too serious</li>
 </ul>
-<p><strong>Inverted Index的构建如下图所示</strong></p>
+<p><strong>Inverted Index的构建如下图所示</strong><br><img src="https://Jade-Jade-Jade.github.io/image/InvertedIndex002.jpeg" alt="image"><br><img src="https://Jade-Jade-Jade.github.io/image/InvertedIndex003.jpeg" alt="image"></p>
 <p><strong>应用举例：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">1）Brutus AND Caesar</div><div class="line">- Locate Brutus in the Dictionary and Retrieve its postings.</div><div class="line">Brutus: 2-&gt;4-&gt;8-&gt;16-&gt;32-&gt;64-&gt;128</div><div class="line">- Locate Caesar in the Dictionary and Retrieve its postings.</div><div class="line">Caesar: 1-&gt;2-&gt;3-&gt;5-&gt;8-&gt;13-&gt;21-&gt;34</div><div class="line">- “Merge” the two postings and select the ones in common (postings are document ids):</div><div class="line">Brutus: 2-&gt;4-&gt;8-&gt;16-&gt;32-&gt;64-&gt;128</div><div class="line">Caesar: 1-&gt;2-&gt;3-&gt;5-&gt;8-&gt;13-&gt;21-&gt;34</div><div class="line">2-&gt;8</div><div class="line">O(m + n) 复杂度</div><div class="line"></div><div class="line">2）Brutus AND Calpurnia AND Caesar</div><div class="line">Brutus: 2-&gt;4-&gt;8-&gt;16</div><div class="line">Caesar: 1-&gt;2-&gt;3-&gt;5-&gt;8-&gt;13-&gt;21-&gt;34</div><div class="line">Calpurnia: 2-&gt;16</div><div class="line">Merge的顺序要从短到长依次进行</div><div class="line">Execute the query as (Calpurnia AND Brutus) AND Caesar.</div><div class="line"></div><div class="line">INTERSECT(&lt;t1, . . . , tn&gt;)</div><div class="line">   terms ← SORTBYINCREASINGFREQUENCY(&lt;t1, . . . , tn&gt;)</div><div class="line">   result ← postings( first(terms))</div><div class="line">   terms ← rest(terms)</div><div class="line">   while terms /= NIL and result /= NIL</div><div class="line">   do</div><div class="line">       result ← INTERSECT(result, postings(first(terms)))</div><div class="line">       terms ← rest(terms)</div><div class="line">   return result</div><div class="line"></div><div class="line">印象中有算法解决Merge K sorted list复杂度可以到nklogk(n为链表的平均长度）</div><div class="line">[LeetCode参考: https://leetcode.com/problems/merge-k-sorted-lists/description/]</div><div class="line">书本并没有采取这种算法可能有原因的：</div><div class="line">- 在实际情况中这些个链表的长度一点也不平均</div><div class="line">- 只需要最短的那个链表给merge结束就完事了我们并不需要完完整整的merge。</div></pre></td></tr></table></figure>
 <blockquote>
 <h4 id="Skip-Pointers"><a href="#Skip-Pointers" class="headerlink" title="Skip Pointers"></a>Skip Pointers</h4></blockquote>
 <p><a href="https://www.youtube.com/watch?v=tPsCQOsa7j0" target="_blank" rel="external">相关视频讲解</a></p>
 <p><strong>目的： speed up the merging of postings</strong></p>
-<p><strong>方法解释</strong>：如图所示</p>
+<p><strong>方法解释</strong>：如图所示<br><img src="https://Jade-Jade-Jade.github.io/image/InvertedIndex004.jpeg" alt="image"></p>
 <p><strong>算法</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">INTERSECTWITHSKIPS (p1, p2)</div><div class="line">	answer ← &lt; &gt;</div><div class="line">	while p1 /= NIL and p2 /= NIL</div><div class="line">	do if docID(p1) == docID(p2)</div><div class="line">        then ADD(answer, docID(p1))</div><div class="line">            p1 &lt;- next(p1)</div><div class="line">            p2 &lt;- next(p2)</div><div class="line">        else if docID(p1) &lt; docID(p2)</div><div class="line">                then if hasSkip(p1) and (docID(skip(p1)) &lt;= docID(p2))</div><div class="line">                     then while hasSkip(p1) and (docID(skip(p1) &lt;= docID(p2))</div><div class="line">                       do p1 &lt;- skip(p1)</div><div class="line">                    else p1 &lt;- next(p1)</div><div class="line">				else if hasSkip(p2) and (docID(skip(p2)) &lt;= docID(p1))</div><div class="line">                    then while hasSkip(p2) and (docID(skip(p2) &lt;= docID(p1))</div><div class="line">                       do p2 &lt;- skip(p2)</div><div class="line">                    else p2 &lt;- next(p2)</div><div class="line">	return answer</div></pre></td></tr></table></figure>
 <p><strong>适用范围：</strong> </p>
@@ -540,14 +467,13 @@
 </ul>
 <h5 id="方法二：-Positional-indexes"><a href="#方法二：-Positional-indexes" class="headerlink" title="方法二： Positional indexes"></a>方法二： Positional indexes</h5><p><strong>方法介绍</strong></p>
 <p>相比于之前的inverted index, 这里其实就是多记录了一个Term出现的位置位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Term, TotalFrequency&gt; -&gt; &lt;docID, Frequency&gt; </div><div class="line">变成</div><div class="line">&lt;Term, TotalFrequency&gt; -&gt; &lt;docID, Frequency, Positions&gt;</div></pre></td></tr></table></figure></p>
-<p><img src="http://note.youdao.com/favicon.ico" alt="image"></p>
+<p><img src="https://Jade-Jade-Jade.github.io/image/InvertedIndex005.jpeg" alt="image"></p>
 <p>比方说我们要查询</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">to be or not to be</div></pre></td></tr></table></figure>
 <p>现在我们首先找to be, 步骤如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. 找到同时含有to和be两个term的文档。</div><div class="line">2. 查找两个term在文档中的位置，如果be的位置在to后面一个，那就找到了一个结果</div><div class="line">比如上面那个图，我们就能找到一个possible match是</div><div class="line">to: &lt;...;4:&lt;...,429,433&gt;;...&gt;</div><div class="line">be: &lt;...;4:&lt;...,430,434&gt;;...&gt;</div></pre></td></tr></table></figure>
 <p><strong>算法</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">POSITIONALINTERSECT(p1, p2, k)</div><div class="line">    answer &lt;- &lt;&gt;</div><div class="line">    while p1 /= NIL and p2 /= NIL</div><div class="line">    do if docID(p1) == docID(p2)</div><div class="line">        then l &lt;- &lt;&gt;</div><div class="line">            pp1 &lt;- positions(p1)</div><div class="line">            pp2 &lt;- positions(p2)</div><div class="line">            while pp1 /= NIL</div><div class="line">            do while pp2 /= NIL</div><div class="line">                do if |pos(pp1) - pos(pp2)| &lt;= k</div><div class="line">                    then ADD(l, pos(pp2))</div><div class="line">                    else if pos(pp2) &gt; pos(pp1)</div><div class="line">                        the break</div><div class="line">                    pp2 &lt;- next(pp2)</div><div class="line">                while l /= &lt;&gt; and |l[0] - pos(pp1)| &gt; k</div><div class="line">                do DELETE(l[0])</div><div class="line">                for each ps in l</div><div class="line">                do ADD(answer, &lt;docID(p1), pos(pp1), ps&gt;)</div><div class="line">                pp1 &lt;- next(pp1)</div><div class="line">            p1 &lt;- next(p1)</div><div class="line">            p2 &lt;- next(p2)</div><div class="line">        else if docID(p1) &lt; docID(p2)</div><div class="line">            then p1 &lt;- next(p1)</div><div class="line">            else p2 &lt;- next(p2)</div><div class="line">    return answer</div></pre></td></tr></table></figure>
-
       
     </div>
     
