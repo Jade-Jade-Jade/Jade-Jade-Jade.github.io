@@ -535,15 +535,22 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 <p>Discounted Cumulative Gain</p>
 </blockquote>
 <p>The premise of DCG is that highly relevant documents appearing lower in a seach result list should be penalized as the graded relevance value is reduced logarithmically proportional to the position of the result.<br>这个方法的基本思想是:<br>如果一个相关文档出现在结果列表中靠后的位置，那么应该给予相应的惩罚。越靠后惩罚越大。</p>
-<p><img src="https://Jade-Jade-Jade.github.io/image/SearchEngineEvaluation003.png" alt="image"><br><img src="https://Jade-Jade-Jade.github.io/image/SearchEngineEvaluation004.png" alt="image"></p>
+<p><img src="https://Jade-Jade-Jade.github.io/image/SearchEngineEvaluation003.png" alt="image"><br>[例子]<br><img src="https://Jade-Jade-Jade.github.io/image/SearchEngineEvaluation004.png" alt="image"></p>
 <blockquote>
-<p>基于Precision和Recall方法的局限性。</p>
-</blockquote>
+<h4 id="基于Precision和Recall方法的局限性。"><a href="#基于Precision和Recall方法的局限性。" class="headerlink" title="基于Precision和Recall方法的局限性。"></a>基于Precision和Recall方法的局限性。</h4></blockquote>
 <ul>
 <li>Should average over large document collection and query ensembles</li>
 <li>Need human relevance assessments<br>  需要人来判断是否相关，这并不是很可靠的</li>
 <li>Assessments have to be binary<br>  对相关性的评价是非黑即白</li>
 <li>Heavily skewed by collection/authorship<br>  不同的领域有可能会有不同的结果，不具有普遍性</li>
+</ul>
+<blockquote>
+<h4 id="Non-­relevance-­based-measures"><a href="#Non-­relevance-­based-measures" class="headerlink" title="Non-­relevance-­based measures"></a>Non-­relevance-­based measures</h4></blockquote>
+<p>搜索引擎也会使用不基于相关性的方法</p>
+<ul>
+<li>Click-through on ﬁrst result: Not very reliable if you look at a single click-through … but pretty reliable in the aggregate.</li>
+<li>Studies of user behavior in the lab</li>
+<li>A/B testing</li>
 </ul>
 
           
