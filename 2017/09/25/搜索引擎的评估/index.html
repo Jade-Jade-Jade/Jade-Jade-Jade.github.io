@@ -105,7 +105,7 @@
 <meta property="og:image" content="https://Jade-Jade-Jade.github.io/image/SearchEngineEvaluation002.png">
 <meta property="og:image" content="https://Jade-Jade-Jade.github.io/image/SearchEngineEvaluation003.png">
 <meta property="og:image" content="https://Jade-Jade-Jade.github.io/image/SearchEngineEvaluation004.png">
-<meta property="og:updated_time" content="2017-09-26T01:20:53.000Z">
+<meta property="og:updated_time" content="2017-09-26T01:21:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搜索引擎的评估 Search Engine Evaluation">
 <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]} });      How do we measure the quality of search engines? Recall and Precision（召回率和精确率） $$Precision = \frac{relevant{\space}item">
@@ -535,8 +535,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 <li>MAP requires many relevance judgments in documents collection</li>
 </ol>
 <blockquote>
-<p> Discounted Cumulative Gain</p>
-</blockquote>
+<h4 id="Discounted-Cumulative-Gain"><a href="#Discounted-Cumulative-Gain" class="headerlink" title="Discounted Cumulative Gain"></a>Discounted Cumulative Gain</h4></blockquote>
 <p>The premise of DCG is that highly relevant documents appearing lower in a seach result list should be penalized as the graded relevance value is reduced logarithmically proportional to the position of the result.<br>这个方法的基本思想是:<br>如果一个相关文档出现在结果列表中靠后的位置，那么应该给予相应的惩罚。越靠后惩罚越大。</p>
 <p><img src="https://Jade-Jade-Jade.github.io/image/SearchEngineEvaluation003.png" alt="image"><br>[例子]<br><img src="https://Jade-Jade-Jade.github.io/image/SearchEngineEvaluation004.png" alt="image"></p>
 <blockquote>
@@ -712,7 +711,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#How-do-we-measure-the-quality-of-search-engines"><span class="nav-number">1.</span> <span class="nav-text">How do we measure the quality of search engines?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pythagorean-Mean"><span class="nav-number">2.</span> <span class="nav-text">Pythagorean Mean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#F-Measure"><span class="nav-number">3.</span> <span class="nav-text">F Measure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calculating-Recall-Precision-at-Fixed-Positions"><span class="nav-number">4.</span> <span class="nav-text">Calculating Recall/Precision at Fixed Positions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Precision和Recall方法的局限性。"><span class="nav-number">5.</span> <span class="nav-text">基于Precision和Recall方法的局限性。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Non-­relevance-­based-measures"><span class="nav-number">6.</span> <span class="nav-text">Non-­relevance-­based measures</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#How-do-we-measure-the-quality-of-search-engines"><span class="nav-number">1.</span> <span class="nav-text">How do we measure the quality of search engines?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pythagorean-Mean"><span class="nav-number">2.</span> <span class="nav-text">Pythagorean Mean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#F-Measure"><span class="nav-number">3.</span> <span class="nav-text">F Measure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calculating-Recall-Precision-at-Fixed-Positions"><span class="nav-number">4.</span> <span class="nav-text">Calculating Recall/Precision at Fixed Positions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discounted-Cumulative-Gain"><span class="nav-number">5.</span> <span class="nav-text">Discounted Cumulative Gain</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Precision和Recall方法的局限性。"><span class="nav-number">6.</span> <span class="nav-text">基于Precision和Recall方法的局限性。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Non-­relevance-­based-measures"><span class="nav-number">7.</span> <span class="nav-text">Non-­relevance-­based measures</span></a></li></ol></div>
             
 
           </div>
