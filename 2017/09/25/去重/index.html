@@ -94,22 +94,22 @@
 
 
 
-<meta name="description" content="算法导论 32. String Matching恰逢最近在学习搜索引擎，又提及了字符串处理的只是，便想起来读一次算法导论的32章并且留下笔记。日后再总结其他。 书本中介绍了四个方法。分别为： Naive string-matching algorithm (暴力) The Rabin-Karp algorithm Finite automata KMP 笔记如下:">
+<meta name="description" content="定义 De-duplication – the process of identifying and avoiding essentially identical web pages With respect to web crawling, de-duplication essentially refers to the identification of identical and near">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【算法导论32】字符串匹配">
-<meta property="og:url" content="http://yoursite.com/2017/09/17/【算法导论32】字符串匹配/index.html">
+<meta property="og:title" content="去重 De-Duplication">
+<meta property="og:url" content="http://yoursite.com/2017/09/25/去重/index.html">
 <meta property="og:site_name" content="Jade-Jade-Jade">
-<meta property="og:description" content="算法导论 32. String Matching恰逢最近在学习搜索引擎，又提及了字符串处理的只是，便想起来读一次算法导论的32章并且留下笔记。日后再总结其他。 书本中介绍了四个方法。分别为： Naive string-matching algorithm (暴力) The Rabin-Karp algorithm Finite automata KMP 笔记如下:">
+<meta property="og:description" content="定义 De-duplication – the process of identifying and avoiding essentially identical web pages With respect to web crawling, de-duplication essentially refers to the identification of identical and near">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/%5B算法导论32%5D001.jpeg">
-<meta property="og:image" content="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/%5B算法导论32%5D002.jpeg">
-<meta property="og:image" content="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/%5B算法导论32%5D003.jpeg">
-<meta property="og:image" content="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/%5B算法导论32%5D004.jpeg">
-<meta property="og:updated_time" content="2017-09-21T02:02:07.000Z">
+<meta property="og:image" content="https://jade-jade-jade.github.io/image/Identifying_Duplicates001.jpg">
+<meta property="og:image" content="https://jade-jade-jade.github.io/image/Identifying_Duplicates002.jpg">
+<meta property="og:image" content="https://jade-jade-jade.github.io/image/Identifying_Duplicates003.jpg">
+<meta property="og:image" content="https://jade-jade-jade.github.io/image/Identifying_Duplicates004.jpg">
+<meta property="og:updated_time" content="2017-10-02T21:27:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【算法导论32】字符串匹配">
-<meta name="twitter:description" content="算法导论 32. String Matching恰逢最近在学习搜索引擎，又提及了字符串处理的只是，便想起来读一次算法导论的32章并且留下笔记。日后再总结其他。 书本中介绍了四个方法。分别为： Naive string-matching algorithm (暴力) The Rabin-Karp algorithm Finite automata KMP 笔记如下:">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/%5B算法导论32%5D001.jpeg">
+<meta name="twitter:title" content="去重 De-Duplication">
+<meta name="twitter:description" content="定义 De-duplication – the process of identifying and avoiding essentially identical web pages With respect to web crawling, de-duplication essentially refers to the identification of identical and near">
+<meta name="twitter:image" content="https://jade-jade-jade.github.io/image/Identifying_Duplicates001.jpg">
 
 
 
@@ -138,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/17/【算法导论32】字符串匹配/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/25/去重/"/>
 
 
 
 
 
-  <title>【算法导论32】字符串匹配 | Jade-Jade-Jade</title>
+  <title>去重 De-Duplication | Jade-Jade-Jade</title>
   
 
 
@@ -281,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/【算法导论32】字符串匹配/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/25/去重/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jade-Jade-Jade">
@@ -298,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【算法导论32】字符串匹配</h1>
+          <h1 class="post-title" itemprop="name headline">去重 De-Duplication</h1>
         
 
         <div class="post-meta">
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T21:06:34-07:00">
-                2017-09-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-25T20:51:02-07:00">
+                2017-09-25
               </time>
             
 
@@ -333,8 +333,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/资料检索与搜索引擎/" itemprop="url" rel="index">
+                    <span itemprop="name">资料检索与搜索引擎</span>
                   </a>
                 </span>
 
@@ -371,15 +371,47 @@
 
       
         <blockquote>
-<h4 id="算法导论-32-String-Matching"><a href="#算法导论-32-String-Matching" class="headerlink" title="算法导论 32. String Matching"></a>算法导论 32. String Matching</h4><p>恰逢最近在学习搜索引擎，又提及了字符串处理的只是，便想起来读一次算法导论的32章并且留下笔记。日后再总结其他。</p>
-<p>书本中介绍了四个方法。分别为：</p>
-<p>Naive string-matching algorithm (暴力)</p>
-<p>The Rabin-Karp algorithm</p>
-<p>Finite automata</p>
-<p>KMP</p>
-<p>笔记如下:</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/%5B算法导论32%5D001.jpeg" alt="image"><br><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/%5B算法导论32%5D002.jpeg" alt="image"><br><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/%5B算法导论32%5D003.jpeg" alt="image"><br><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/%5B算法导论32%5D004.jpeg" alt="image"></p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4></blockquote>
+<p><strong>De-duplication</strong> – the process of identifying and avoiding essentially identical web pages</p>
+<p>With respect to web crawling, de-duplication essentially refers to the identification of identical and nearly identical web pages and indexing <strong>only a single version to return as a search result</strong></p>
+<p>对于相同或者相近的网页，只留下一个版本</p>
+<p>[例子]</p>
+<ul>
+<li>the URL’s host name can be distinct (virtual hosts), </li>
+<li>the URL’s protocol can be distinct (http, https), </li>
+<li>the URL’s path and/or page name can be distinct</li>
+</ul>
+<p><strong>不同的地址指向相同的网站</strong></p>
+<p><a href="http://maps.google.com" target="_blank" rel="external">http://maps.google.com</a><br><a href="https://www.google.com/maps" target="_blank" rel="external">https://www.google.com/maps</a></p>
+<p><strong>相类似的网站</strong></p>
+<p>比如一个网页前后相隔几秒的版本</p>
+<p><strong>镜像</strong></p>
+<p>Mirroring is the systematic replication of web pages across hosts.<br>是造成duplicate的一个重要原因</p>
+<p>Host1/α and Host2/β are mirrors iff：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For all (or most) paths p such that http://Host1/α/p exists </div><div class="line">when http://Host2/β/p exists as well </div><div class="line">with identical (or near identical) content, and vice versa.</div></pre></td></tr></table></figure></p>
+<p>例如 <a href="https://www.apache.org/dyn/closer.cgi" target="_blank" rel="external">https://www.apache.org/dyn/closer.cgi</a></p>
+<p>[解释]</p>
+<ul>
+<li>在云计算中也经常提到De-duplication的概念，但是与此处所说的并不一样</li>
+</ul>
+<blockquote>
+<h4 id="解决Duplication-Near-Duplication的问题"><a href="#解决Duplication-Near-Duplication的问题" class="headerlink" title="解决Duplication/Near-Duplication的问题"></a>解决Duplication/Near-Duplication的问题</h4></blockquote>
+<h5 id="Duplication"><a href="#Duplication" class="headerlink" title="Duplication"></a>Duplication</h5><p>[方法] compute fingerprints using cryptographic hashing, 如 SHA-1 和 MD5。有序排列，方便查找logN</p>
+<h5 id="Near-Duplication"><a href="#Near-Duplication" class="headerlink" title="Near-Duplication"></a>Near-Duplication</h5><p>[方法] compute the syntactic similarity, and use a similarity threshold to detect near-duplicates</p>
+<p>这里具体介绍两种方法</p>
+<ul>
+<li><strong>通过计算w-Shingles和Jaccard Similarity来得到相似度</strong></li>
+</ul>
+<p>[<strong>参考视频</strong>] <a href="https://www.youtube.com/watch?v=bQAYY8INBxg" target="_blank" rel="external">https://www.youtube.com/watch?v=bQAYY8INBxg</a><br>[<strong>视频笔记</strong>]<br><img src="https://jade-jade-jade.github.io/image/Identifying_Duplicates001.jpg" alt="image"><br><img src="https://jade-jade-jade.github.io/image/Identifying_Duplicates002.jpg" alt="image"><br><img src="https://jade-jade-jade.github.io/image/Identifying_Duplicates003.jpg" alt="image"><br><img src="https://jade-jade-jade.github.io/image/Identifying_Duplicates004.jpg" alt="image"></p>
+<ul>
+<li><strong>通过fingerprints来计算similarity</strong><br>[<strong>SimHash</strong>] Simhash is one where similar items are hashed to similar hash values<br>(by similar we mean the <strong>bitwise Hamming distance</strong> between hash values)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">pick a hashsize, lets say 32 bits</div><div class="line">let V = [0] * 32  # (ie a vector of 32 zeros)</div><div class="line">break the input phrase up into shingles. e.g.</div><div class="line">	&apos;the cat sat on the mat&apos;.shingles(2) </div><div class="line">	=&gt;#&lt;Set: &#123;&quot;th&quot;, &quot;he&quot;, &quot;e &quot;, &quot; c&quot;, &quot;ca&quot;, &quot;at&quot;, &quot;t &quot;, &quot; s&quot;, &quot;sa&quot;, &quot; o&quot;, &quot;on&quot;, &quot;n &quot;, &quot; t&quot;, &quot; m&quot;, &quot;ma&quot;&#125;&gt; </div><div class="line">hash each feature using a normal 32-bit hash algorithm. e.g.</div><div class="line">	&quot;th&quot;.hash = -502157718 &quot;he&quot;.hash = -369049682 ... </div><div class="line">for each hash</div><div class="line">	if bit_i of hash is set then add 1 to V[i]</div><div class="line">	if bit_i of hash is not set then take 1 from V[i]</div><div class="line">simhash bit_i is 1 if V[i] &gt; 0 and 0 otherwise</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>[<strong>通过SimHash找到相似的页面</strong>]</p>
+<ul>
+<li>如果两个SimHash的Hamming distance相近，则如果将所有SimHash有序排列，它们会位于比较相近的位置</li>
+<li>数字位左移或者右移相同的位置，其相对Hamming distance不改变<br>因此可以这样做<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rotate the bits B times (B is the length of vector)</div><div class="line">	sort</div><div class="line">	check adjancent</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -404,8 +436,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/11/不忘初心/" rel="next" title="不忘初心">
-                <i class="fa fa-chevron-left"></i> 不忘初心
+              <a href="/2017/09/25/搜索引擎的评估/" rel="next" title="搜索引擎的评估 Search Engine Evaluation">
+                <i class="fa fa-chevron-left"></i> 搜索引擎的评估 Search Engine Evaluation
               </a>
             
           </div>
@@ -414,8 +446,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/20/倒排索引-Inverted-Indexing/" rel="prev" title="倒排索引_Inverted_Indexing">
-                倒排索引_Inverted_Indexing <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/02/网络爬虫初识/" rel="prev" title="网络爬虫初识">
+                网络爬虫初识 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -541,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法导论-32-String-Matching"><span class="nav-number">1.</span> <span class="nav-text">算法导论 32. String Matching</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决Duplication-Near-Duplication的问题"><span class="nav-number">2.</span> <span class="nav-text">解决Duplication/Near-Duplication的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Duplication"><span class="nav-number">2.1.</span> <span class="nav-text">Duplication</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Near-Duplication"><span class="nav-number">2.2.</span> <span class="nav-text">Near-Duplication</span></a></li></ol></li></ol></div>
             
 
           </div>
