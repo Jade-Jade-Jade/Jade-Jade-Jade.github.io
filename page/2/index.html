@@ -281,6 +281,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-software architectures">
+          <a href="/categories/软件架构" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            软件架构
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -300,6 +310,239 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/20/倒排索引-Inverted-Indexing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jade-Jade-Jade">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jade-Jade-Jade">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/20/倒排索引-Inverted-Indexing/" itemprop="url">倒排索引_Inverted_Indexing</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T14:24:56-07:00">
+                2017-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资料检索与搜索引擎/" itemprop="url" rel="index">
+                    <span itemprop="name">资料检索与搜索引擎</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<h4 id="Definition-of-an-Inverted-index"><a href="#Definition-of-an-Inverted-index" class="headerlink" title="Definition of an Inverted index"></a>Definition of an Inverted index</h4><p>An inverted index is typically composed of a vector containing all distinct words of the text collection in lexicographical order (which is called the vocabulary) and <strong>for each word in the vocabulary, a list of all documents (and text positions) in which that word occurs</strong></p>
+</blockquote>
+<p><strong>通俗的说: 单词到包括该单词的文档的集合的映射。</strong></p>
+<p>注释: 这里的单词可能是被处理过的，一些常用的处理方法有</p>
+<ul>
+<li><strong>Case folding</strong>: converting all uppercase letters to lower case</li>
+<li><strong>Stemming</strong>: reducing words to their morphological root</li>
+<li><strong>Stop words</strong>: removing words that are so common they provide no information</li>
+</ul>
+<blockquote>
+<h4 id="Inverted-index-的应用情景"><a href="#Inverted-index-的应用情景" class="headerlink" title="Inverted index 的应用情景"></a>Inverted index 的应用情景</h4></blockquote>
+<p>假设有这样一个Query:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Which plays of Shakespeare contain the words Brutus AND Caesar but NOT Calpurnia?</div></pre></td></tr></table></figure>
+<h5 id="方法一-暴力搜索"><a href="#方法一-暴力搜索" class="headerlink" title="方法一 暴力搜索"></a>方法一 暴力搜索</h5><p>先找到所有包含Brutus和Caesar的话剧，再逐字排查，如果含有Caplurnia就删除掉该话剧。</p>
+<p><strong>缺点：</strong> </p>
+<ul>
+<li>Too slow</li>
+<li>需要很大的空间</li>
+<li>不够灵活，不支持其他的操作，比如”Find the word Romans near countrymen”</li>
+</ul>
+<h5 id="方法二：-Term-Document-Incidence-Matrix"><a href="#方法二：-Term-Document-Incidence-Matrix" class="headerlink" title="方法二： Term-Document Incidence Matrix"></a>方法二： Term-Document Incidence Matrix</h5><p>用了  Bit Map 位运算的思想。构建如下矩阵，(t,d)=1代表term t在document d中出现，0代表没有出现。例如：</p>
+<p><img src="https://jade-jade-jade.github.io/image/InvertedIndex001.jpg" alt="image"></p>
+<p>这样对于上一个查询，只需要</p>
+<p>110100 AND 110111 AND 10111 = 100100</p>
+<p>所以the two plays matching the query are:</p>
+<p>“Anthony and Cleopatra”, “Hamlet”</p>
+<p><strong>缺点：</strong> </p>
+<ul>
+<li>需要很大的空间,并且矩阵通常十分稀疏:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Given 1 million documents and 500,000 terms.</div><div class="line">The (term x Document) matrix in this case will have size 500K x 1M or</div><div class="line">half-a-trillion 0’s and 1’s.</div></pre></td></tr></table></figure>
+<h5 id="方法三：-Inverted-Index"><a href="#方法三：-Inverted-Index" class="headerlink" title="方法三： Inverted Index"></a>方法三： Inverted Index</h5><p>在数据结构上我们选择了链表而不是数组，链表的优势在于：</p>
+<ul>
+<li>Dynamic space allocation</li>
+<li>Insertion of terms into documents easy</li>
+<li>There is space overhead of pointers, though this is not too serious</li>
+</ul>
+<p><strong>Inverted Index的构建如下图所示</strong><br><img src="https://Jade-Jade-Jade.github.io/image/InvertedIndex002.jpeg" alt="image"><br><img src="https://Jade-Jade-Jade.github.io/image/InvertedIndex003.jpeg" alt="image"></p>
+<p><strong>应用举例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">1）Brutus AND Caesar</div><div class="line">- Locate Brutus in the Dictionary and Retrieve its postings.</div><div class="line">Brutus: 2-&gt;4-&gt;8-&gt;16-&gt;32-&gt;64-&gt;128</div><div class="line">- Locate Caesar in the Dictionary and Retrieve its postings.</div><div class="line">Caesar: 1-&gt;2-&gt;3-&gt;5-&gt;8-&gt;13-&gt;21-&gt;34</div><div class="line">- “Merge” the two postings and select the ones in common (postings are document ids):</div><div class="line">Brutus: 2-&gt;4-&gt;8-&gt;16-&gt;32-&gt;64-&gt;128</div><div class="line">Caesar: 1-&gt;2-&gt;3-&gt;5-&gt;8-&gt;13-&gt;21-&gt;34</div><div class="line">2-&gt;8</div><div class="line">O(m + n) 复杂度</div><div class="line"></div><div class="line">2）Brutus AND Calpurnia AND Caesar</div><div class="line">Brutus: 2-&gt;4-&gt;8-&gt;16</div><div class="line">Caesar: 1-&gt;2-&gt;3-&gt;5-&gt;8-&gt;13-&gt;21-&gt;34</div><div class="line">Calpurnia: 2-&gt;16</div><div class="line">Merge的顺序要从短到长依次进行</div><div class="line">Execute the query as (Calpurnia AND Brutus) AND Caesar.</div><div class="line"></div><div class="line">INTERSECT(&lt;t1, . . . , tn&gt;)</div><div class="line">   terms ← SORTBYINCREASINGFREQUENCY(&lt;t1, . . . , tn&gt;)</div><div class="line">   result ← postings( first(terms))</div><div class="line">   terms ← rest(terms)</div><div class="line">   while terms /= NIL and result /= NIL</div><div class="line">   do</div><div class="line">       result ← INTERSECT(result, postings(first(terms)))</div><div class="line">       terms ← rest(terms)</div><div class="line">   return result</div><div class="line"></div><div class="line">印象中有算法解决Merge K sorted list复杂度可以到nklogk(n为链表的平均长度）</div><div class="line">[LeetCode参考: https://leetcode.com/problems/merge-k-sorted-lists/description/]</div><div class="line">书本并没有采取这种算法可能有原因的：</div><div class="line">- 在实际情况中这些个链表的长度一点也不平均</div><div class="line">- 只需要最短的那个链表给merge结束就完事了我们并不需要完完整整的merge。</div></pre></td></tr></table></figure>
+<blockquote>
+<h4 id="Skip-Pointers"><a href="#Skip-Pointers" class="headerlink" title="Skip Pointers"></a>Skip Pointers</h4></blockquote>
+<p><a href="https://www.youtube.com/watch?v=tPsCQOsa7j0" target="_blank" rel="external">相关视频讲解</a></p>
+<p><strong>目的： speed up the merging of postings</strong></p>
+<p><strong>方法解释</strong>：如图所示<br><img src="https://Jade-Jade-Jade.github.io/image/InvertedIndex004.jpeg" alt="image"></p>
+<p><strong>算法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">INTERSECTWITHSKIPS (p1, p2)</div><div class="line">	answer ← &lt; &gt;</div><div class="line">	while p1 /= NIL and p2 /= NIL</div><div class="line">	do if docID(p1) == docID(p2)</div><div class="line">        then ADD(answer, docID(p1))</div><div class="line">            p1 &lt;- next(p1)</div><div class="line">            p2 &lt;- next(p2)</div><div class="line">        else if docID(p1) &lt; docID(p2)</div><div class="line">                then if hasSkip(p1) and (docID(skip(p1)) &lt;= docID(p2))</div><div class="line">                     then while hasSkip(p1) and (docID(skip(p1) &lt;= docID(p2))</div><div class="line">                       do p1 &lt;- skip(p1)</div><div class="line">                    else p1 &lt;- next(p1)</div><div class="line">				else if hasSkip(p2) and (docID(skip(p2)) &lt;= docID(p1))</div><div class="line">                    then while hasSkip(p2) and (docID(skip(p2) &lt;= docID(p1))</div><div class="line">                       do p2 &lt;- skip(p2)</div><div class="line">                    else p2 &lt;- next(p2)</div><div class="line">	return answer</div></pre></td></tr></table></figure>
+<p><strong>适用范围：</strong> </p>
+<ol>
+<li>Index 相对固定 update的次数比较少: Building effective skip pointers is easy if an index is relatively static; it is harder if a postings list keeps changing because of updates. A malicious deletion strategy can render skip lists ineffective.</li>
+<li>the presence of skip pointers only helps for AND queries, not for OR queries.</li>
+</ol>
+<p><strong>问题： How many skip pointers should we add?</strong></p>
+<ol>
+<li>TradeOff Problem:</li>
+</ol>
+<ul>
+<li>More skips -&gt; shorter skip span =&gt; more likely to skip. But lots of comparision to skip pointers</li>
+<li>Fewer skips -&gt; few pointer comparision, but then long skip spans =&gt; few successful skips</li>
+</ul>
+<ol>
+<li>Simple Heuristic</li>
+</ol>
+<ul>
+<li>用Length的平方根: for a postings list of length P, use sqrt{P} evenly-spaced skip pointers.</li>
+</ul>
+<blockquote>
+<h4 id="硬件对速度的影响"><a href="#硬件对速度的影响" class="headerlink" title="硬件对速度的影响"></a>硬件对速度的影响</h4></blockquote>
+<p>Choosing the optimal encoding for an inverted index is an ever-changing game for the system builder, because it is strongly dependent on underlying computer technologies and their relative speeds and sizes. Traditionally, CPUs were slow, and so highly compressed techniques were not optimal. Now CPUs are fast and disk is slow, so reducing disk postings list size dominates. However, if you’re running a search engine with everything in memory then the equation changes again.</p>
+<blockquote>
+<h4 id="Phrase-Queries"><a href="#Phrase-Queries" class="headerlink" title="Phrase Queries"></a>Phrase Queries</h4></blockquote>
+<p>之前所说的inverted index技术是基于Term的，但是在实际运用中我们经常会查询一个短语，而不是单词，比如：stanford university</p>
+<p>这里阐述两个方法</p>
+<h5 id="方法一：-Bi-word-indexes-2-grams-2-shingles"><a href="#方法一：-Bi-word-indexes-2-grams-2-shingles" class="headerlink" title="方法一： Bi-word indexes (2-grams, 2 shingles)"></a>方法一： Bi-word indexes (2-grams, 2 shingles)</h5><p><strong>方法介绍</strong></p>
+<ul>
+<li>A bi-word (or a 2-gram) is a consecutive pair of terms in some text。比如 “Friends, Romans, Countrymen” 会生成 “friends romans” 和 “romans countrymen”</li>
+<li>Each of these bi-words is now added to the dictionary as a term。也就是说之前的Term变成了现在的bi-words。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>数量爆炸！Bi-words will cause an explosion in the vocabulary database</li>
+<li>短语长度也许大于2。Queries longer than 2 words will have to be broken into bi-word segments</li>
+</ul>
+<h5 id="方法二：-Positional-indexes"><a href="#方法二：-Positional-indexes" class="headerlink" title="方法二： Positional indexes"></a>方法二： Positional indexes</h5><p><strong>方法介绍</strong></p>
+<p>相比于之前的inverted index, 这里其实就是多记录了一个Term出现的位置位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Term, TotalFrequency&gt; -&gt; &lt;docID, Frequency&gt; </div><div class="line">变成</div><div class="line">&lt;Term, TotalFrequency&gt; -&gt; &lt;docID, Frequency, Positions&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="https://Jade-Jade-Jade.github.io/image/InvertedIndex005.jpeg" alt="image"></p>
+<p>比方说我们要查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">to be or not to be</div></pre></td></tr></table></figure>
+<p>现在我们首先找to be, 步骤如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. 找到同时含有to和be两个term的文档。</div><div class="line">2. 查找两个term在文档中的位置，如果be的位置在to后面一个，那就找到了一个结果</div><div class="line">比如上面那个图，我们就能找到一个possible match是</div><div class="line">to: &lt;...;4:&lt;...,429,433&gt;;...&gt;</div><div class="line">be: &lt;...;4:&lt;...,430,434&gt;;...&gt;</div></pre></td></tr></table></figure>
+<p><strong>算法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">POSITIONALINTERSECT(p1, p2, k)</div><div class="line">    answer &lt;- &lt;&gt;</div><div class="line">    while p1 /= NIL and p2 /= NIL</div><div class="line">    do if docID(p1) == docID(p2)</div><div class="line">        then l &lt;- &lt;&gt;</div><div class="line">            pp1 &lt;- positions(p1)</div><div class="line">            pp2 &lt;- positions(p2)</div><div class="line">            while pp1 /= NIL</div><div class="line">            do while pp2 /= NIL</div><div class="line">                do if |pos(pp1) - pos(pp2)| &lt;= k</div><div class="line">                    then ADD(l, pos(pp2))</div><div class="line">                    else if pos(pp2) &gt; pos(pp1)</div><div class="line">                        the break</div><div class="line">                    pp2 &lt;- next(pp2)</div><div class="line">                while l /= &lt;&gt; and |l[0] - pos(pp1)| &gt; k</div><div class="line">                do DELETE(l[0])</div><div class="line">                for each ps in l</div><div class="line">                do ADD(answer, &lt;docID(p1), pos(pp1), ps&gt;)</div><div class="line">                pp1 &lt;- next(pp1)</div><div class="line">            p1 &lt;- next(p1)</div><div class="line">            p2 &lt;- next(p2)</div><div class="line">        else if docID(p1) &lt; docID(p2)</div><div class="line">            then p1 &lt;- next(p1)</div><div class="line">            else p2 &lt;- next(p2)</div><div class="line">    return answer</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -674,7 +917,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -685,7 +928,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
