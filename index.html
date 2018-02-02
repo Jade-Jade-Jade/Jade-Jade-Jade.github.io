@@ -324,6 +324,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/01/区块链学习笔记3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jade-Jade-Jade">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jade-Jade-Jade">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/01/区块链学习笔记3/" itemprop="url">区块链学习笔记3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-01T20:52:21-08:00">
+                2018-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/区块链/" itemprop="url" rel="index">
+                    <span itemprop="name">区块链</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>交易 - Transaction</p>
+</blockquote>
+<h4 id="一点点手写笔记"><a href="#一点点手写笔记" class="headerlink" title="一点点手写笔记"></a>一点点手写笔记</h4><p><img src="https://jade-jade-jade.github.io/image/BlockChain/1.jpeg" alt="image"><br><img src="https://jade-jade-jade.github.io/image/BlockChain/2.jpeg" alt="image"></p>
+<h4 id="一个真实的交易"><a href="#一个真实的交易" class="headerlink" title="一个真实的交易"></a>一个真实的交易</h4><p><a href="https://blockchain.info/tx/e646284afca18a67980ba96cd3b891476fe182ef9235878296ac18091659440e" target="_blank" rel="external">示例链接</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="attr">"ver"</span>:<span class="number">1</span>,</div><div class="line">   // List of inputs 数组</div><div class="line">   "inputs":[</div><div class="line">      &#123;</div><div class="line">         <span class="attr">"sequence"</span>:<span class="number">4294967295</span>,</div><div class="line">         <span class="attr">"witness"</span>:<span class="string">""</span>,</div><div class="line">         <span class="attr">"prev_out"</span>:&#123;</div><div class="line">            <span class="attr">"spent"</span>:<span class="literal">true</span>,</div><div class="line">            <span class="attr">"tx_index"</span>:<span class="number">283891696</span>,</div><div class="line">            <span class="attr">"type"</span>:<span class="number">0</span>,</div><div class="line">            // Sender 发送地址</div><div class="line">            "addr":"1GEpdQKniomEWNBT57i2Gakx3LbocdPbBu",</div><div class="line">            // Amount 83252 Satoshis</div><div class="line">            "value":83252,</div><div class="line">            "n":0,</div><div class="line">            "script":"76a914a7270d42995925700c222f8490d04beca9b8136388ac"</div><div class="line">         &#125;,</div><div class="line">         "script":"473044022050d8b9012569a81937e95922d0d731d9962da37ff68b3a91bad459c11a92e263022031981eec3e698cb078a69a09997c9384702524b251d574c413ff1847d6c498b60121039840b9ff142da071cd3fdb94fbf3460b0b6b8b5a7dad836a5586ee192ffbe520"</div><div class="line">      &#125;</div><div class="line">   ],</div><div class="line">   "weight":756,</div><div class="line">   "block_height":485786,</div><div class="line">   "relayed_by":"0.0.0.0",</div><div class="line">   // List of outputs 数组</div><div class="line">   "out":[</div><div class="line">      &#123;</div><div class="line">         <span class="attr">"spent"</span>:<span class="literal">true</span>,</div><div class="line">         <span class="attr">"tx_index"</span>:<span class="number">283891999</span>,</div><div class="line">         <span class="attr">"type"</span>:<span class="number">0</span>,</div><div class="line">         // Receiver 接受地址</div><div class="line">         "addr":"3BX3ev7igW8pzFV4GrkkAvaNv6wv5de4ns",</div><div class="line">         "value":49992,</div><div class="line">         // input index</div><div class="line">         "n":0,</div><div class="line">         //This scriptsig is a combination of the sender’s (后面还会说到multisig) signature and their public key</div><div class="line">         "script":"a9146bce8af68361b1fbf6bd6cc2c08acf1705a10e0887"</div><div class="line">      &#125;</div><div class="line">   ],</div><div class="line">   // Lock Time 之后我们要介绍</div><div class="line">   "lock_time":0,</div><div class="line">   "size":189,</div><div class="line">   "double_spend":false,</div><div class="line">   // Receive Time</div><div class="line">   "time":1505676139,</div><div class="line">   "tx_index":283891999,</div><div class="line">   // In counter, input的数量</div><div class="line">   "vin_sz":1,</div><div class="line">   // Transaction ID</div><div class="line">   "hash":"e646284afca18a67980ba96cd3b891476fe182ef9235878296ac18091659440e", </div><div class="line">   // Out counter, output的数量</div><div class="line">   "vout_sz":1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="Lock-Time"><a href="#Lock-Time" class="headerlink" title="Lock Time"></a>Lock Time</h5><p><em>The locktime indicates the earliest time a transaction can be added to the blockchain.</em></p>
+<p>想象一个实际生活中的场景: Alice给Bob一个支票，支票上写Bob只有到某个日期才能使用支票提款。在比特币中，我们则用Lock Time来实现这个Post Date</p>
+<p>除此之外，Locktime给支付者了一定的反悔时间。</p>
+<ul>
+<li>在区块链中，交易一旦发出就不可收回。</li>
+<li>Alice发出了一个3天后的交易，给Bob 1个比特币。</li>
+<li>现在Alice反悔了，但是之前的消息不可撤回。</li>
+<li>Alice这时候发出一个没有Locktime的交易，把这个相同的比特币支付给Alice’。</li>
+<li>这样当三天后这个给Bob的交易执行的时候会被认为是一个double spend因此会被拒绝</li>
+<li>Alice成功反悔了她之前的操作。</li>
+</ul>
+<p>关于Locktime的使用:</p>
+<ul>
+<li>如果locktime &lt; 500 million. locktime被认为是block height (The number of blocks preceding a particular block on a block chain 就是说之后的第几个区块)。Transaction can be added to any block which has this height or higher.</li>
+<li>如果locktime &gt;= 500 million, 那locktime被认为是一个unix format的时间 (the number of seconds elapsed since 1970-01-01T00:00 UTC—currently over 1.395 billion). The transaction can be added to any block whose block time is greater than the locktime.</li>
+</ul>
+<h5 id="Multisig"><a href="#Multisig" class="headerlink" title="Multisig"></a>Multisig</h5><p>The multisig can be implemented as a m of n scheme.</p>
+<p>简单的应用如下: Alice, Bob, Tom把他们的bitcoin都放在一起，如果要使用必须要拿到至少两个人的签名。(就是个例子，不要考虑两人狼狈为奸坑掉第三个人…hhh)</p>
+<h5 id="Writing-messages-in-a-transaction"><a href="#Writing-messages-in-a-transaction" class="headerlink" title="Writing messages in a transaction"></a>Writing messages in a transaction</h5><p>应用场景: 表白(偷笑), 因为区块链是永存的…也不能删除。所以把表白信息放在区块链上后就写入历史了！看，<a href="https://eternitywall.it/" target="_blank" rel="external">表白墙</a>。当然也可以用于存在性证明，比如说我拍了个照片或者其他数字信息放到区块链中去就表示自己拥有它了(就像你拥有钱币一样样的意思)。</p>
+<p>一个方法是用OP_RETURN</p>
+<ul>
+<li>This script allows 80 bytes of data to be added to an output</li>
+<li>This creates a provably unspendable output that the network recognizes</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&quot;vout&quot; : [</div><div class="line">    &#123;</div><div class="line">        &quot;value&quot; : 0.00000000,</div><div class="line">        &quot;n&quot; : 0,</div><div class="line">        &quot;scriptPubKey&quot; : &#123;</div><div class="line">            &quot;asm&quot; : &quot;OP_RETURN 636861726c6579206c6f766573206865696469&quot;,</div><div class="line">            &quot;hex&quot; : &quot;6a13636861726c6579206c6f766573206865696469&quot;,</div><div class="line">            &quot;type&quot; : &quot;nulldata&quot;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        &quot;value&quot; : 0.00200000,</div><div class="line">        &quot;n&quot; : 1,</div><div class="line">        &quot;scriptPubKey&quot; : &#123;</div><div class="line">            &quot;asm&quot; : &quot;OP_DUP OP_HASH160 b8268ce4d481413c4e848ff353cd16104291c45b OP_EQUALVERIFY OP_CHECKSIG&quot;,</div><div class="line">            &quot;hex&quot; : &quot;76a914b8268ce4d481413c4e848ff353cd16104291c45b88ac&quot;,</div><div class="line">            &quot;reqSigs&quot; : 1,</div><div class="line">            &quot;type&quot; : &quot;pubkeyhash&quot;,</div><div class="line">            &quot;addresses&quot; : [</div><div class="line">             &quot;1HnhWpkMHMjgt167kvgcPyurMmsCQ2WPgg&quot;</div><div class="line">            ]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">],</div></pre></td></tr></table></figure>
+<p>上面的”636861726c6579206c6f766573206865696469”就是“charley loves heidi”</p>
+<p>相关资料: </p>
+<ul>
+<li><a href="https://opreturn.org/" target="_blank" rel="external">https://opreturn.org/</a></li>
+<li><a href="https://bitcoin.stackexchange.com/questions/29554/explanation-of-what-an-op-return-transaction-looks-like" target="_blank" rel="external">https://bitcoin.stackexchange.com/questions/29554/explanation-of-what-an-op-return-transaction-looks-like</a></li>
+<li><a href="http://www.cnblogs.com/studyzy/p/write-string-to-blockchain.html" target="_blank" rel="external">http://www.cnblogs.com/studyzy/p/write-string-to-blockchain.html</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/2-Basic-Concepts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1916,181 +2095,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/衣/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jade-Jade-Jade">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jade-Jade-Jade">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/14/衣/" itemprop="url">衣</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-14T17:53:00-07:00">
-                2017-10-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/寻常日/" itemprop="url" rel="index">
-                    <span itemprop="name">寻常日</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>好看的衣服也会让自己开心起来。<br>— 题记</p>
-<blockquote>
-<h4 id="店铺汇集"><a href="#店铺汇集" class="headerlink" title="店铺汇集"></a>店铺汇集</h4></blockquote>
-<h5 id="Urban-Outfitters"><a href="#Urban-Outfitters" class="headerlink" title="Urban Outfitters"></a>Urban Outfitters</h5><p><a href="https://www.urbanoutfitters.com" target="_blank" rel="external">https://www.urbanoutfitters.com</a></p>
-<p>第一次见到这个牌子是在Harvard Square。和橙子约着一起吃了一顿午饭，饭后开始在Harvard Square周边闲逛。一家很有意思的店面，卖衣服卖鞋帽也卖拍立得还有唱片。</p>
-<p>后来又在纽约遇到，才意识到这是一家连锁店。来到洛杉矶，无车的自己开始怀念当时在波屯没事走走停停逛逛街的日子。</p>
-<p>网店的种类其实也很多,但是少了一种在实体店淘货的感觉。</p>
-<h5 id="百武西"><a href="#百武西" class="headerlink" title="百武西"></a>百武西</h5><p><a href="https://bioliving.tmall.com/shop/view_shop.htm?spm=a230r.1.14.6.56789e33pjTecE&amp;user_number_id=183714984" target="_blank" rel="external">淘宝旗舰店链接</a></p>
-<p>初识百武西是在家乡的八佰伴闲逛的时候发现的。扶手电梯的转角。复古文艺的摆设把我一下子就吸引过去。这是个向30年代致敬的生活品牌。它用的模特面目没有棱角分明，身材也没有那么前凸后翘，却一个个就像从书本里缓缓走出来的女学生一般，有着那个年龄独有的精致和年轻。</p>
-<p>有天猫京东官网，依旧独爱在店里一件件细细品读。</p>
-<h5 id="amp-Other-Stories"><a href="#amp-Other-Stories" class="headerlink" title="&amp; Other Stories"></a>&amp; Other Stories</h5><p><a href="https://www.stories.com/us/Ready-to-wear" target="_blank" rel="external">https://www.stories.com/us/Ready-to-wear</a></p>
-<p>h&amp;m旗下的品牌。年轻时尚价格亲民。暂时mark还未购买过。</p>
-<h5 id="Zara"><a href="#Zara" class="headerlink" title="Zara"></a>Zara</h5><p>价格迷人也有点时尚，觉得质量没有那么感人。只买过它家一个黑裤子。</p>
-<h5 id="Pixie-Market"><a href="#Pixie-Market" class="headerlink" title="Pixie Market"></a>Pixie Market</h5><p><a href="https://www.pixiemarket.com/" target="_blank" rel="external">https://www.pixiemarket.com/</a></p>
-<p>高街品牌，潮。第一次看到一下心水卖了几件。但是觉得质量对不起价格。不会再买。</p>
-<h5 id="DKNY"><a href="#DKNY" class="headerlink" title="DKNY"></a>DKNY</h5><p><a href="https://www.dkny.com/us/sets/clothing-view-all" target="_blank" rel="external">https://www.dkny.com/us/sets/clothing-view-all</a></p>
-<p>最新发现的身处奥特莱斯中的好店。</p>
-<h5 id="Tommy"><a href="#Tommy" class="headerlink" title="Tommy"></a>Tommy</h5><p><a href="http://usa.tommy.com/en/NEWARRIVALS-WOMEN" target="_blank" rel="external">http://usa.tommy.com/en/NEWARRIVALS-WOMEN</a></p>
-<blockquote>
-<h4 id="性冷淡风"><a href="#性冷淡风" class="headerlink" title="性冷淡风"></a>性冷淡风</h4></blockquote>
-<p>有时候想涂一次红唇，或是买了一个新包，性冷淡风的服装便让这些点缀显得格外的显眼。<br>同时，这又是最好的商务休闲，简单随性大方。</p>
-<p>不过觉得，一些性冷淡风风格却不冷淡的衣服更需要在实体店中尝试和搭配。</p>
-<h5 id="优衣库"><a href="#优衣库" class="headerlink" title="优衣库"></a>优衣库</h5><p>在国内的时候我一次都没有买过，也是很奇怪。第一次买它居然是在美国，而且那次一逛就停不下来一次剁手了好多件。我并不算是优衣库的常客，有且只有一次夏装的购买经验。但是也算是给自己种草了这个牌子吧。</p>
-<h5 id="Everlane"><a href="#Everlane" class="headerlink" title="Everlane"></a>Everlane</h5><p><a href="https://www.everlane.com/collections/womens-all" target="_blank" rel="external">https://www.everlane.com/collections/womens-all</a></p>
-<p>自己还没有购买过，但是逛官网的时候觉得不错的样子，价格也不是特别贵。</p>
-<h5 id="Cos"><a href="#Cos" class="headerlink" title="Cos"></a>Cos</h5><p><a href="https://www.cosstores.com/us/" target="_blank" rel="external">https://www.cosstores.com/us/</a></p>
-<p>第一次试是大四去美国前在合肥某家商场闲逛时被朋友安利的。到了美国才后知后觉的意识到原来是h&amp;m旗下的品牌。好看但是觉得要去实体店试，不大敢直接在网上剁手。</p>
-<h5 id="Acne-Studios"><a href="#Acne-Studios" class="headerlink" title="Acne Studios"></a>Acne Studios</h5><p><a href="http://www.acnestudios.com/us/en/woman/outerwear/" target="_blank" rel="external">http://www.acnestudios.com/us/en/woman/outerwear/</a></p>
-<p>定价略高，不过看官网确实是我的菜。价位真的有点高啊….要努力….</p>
-<h5 id="frankandoak"><a href="#frankandoak" class="headerlink" title="frankandoak"></a>frankandoak</h5><p><a href="https://www.frankandoak.com/women/featured/new-in" target="_blank" rel="external">https://www.frankandoak.com/women/featured/new-in</a></p>
-<blockquote>
-<h4 id="鞋子"><a href="#鞋子" class="headerlink" title="鞋子"></a>鞋子</h4></blockquote>
-<h5 id="Keds"><a href="#Keds" class="headerlink" title="Keds"></a>Keds</h5><p><a href="http://www.keds.com/en/home" target="_blank" rel="external">http://www.keds.com/en/home</a></p>
-<p>美帝老北京布鞋替代款….对，我是老北京布鞋脑残粉….</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2141,7 +2145,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
