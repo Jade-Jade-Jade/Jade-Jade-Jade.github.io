@@ -463,25 +463,53 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 <li>Bob用签名, message和public key验证Alice一定拥有对应的私钥。</li>
 <li>因此Alice是一个友善的发出者</li>
 </ul>
-<p><img src="https://www.cryptocompare.com/media/1284/digital_signature.png" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/BlockChain/3.png" alt="image"></p>
 <p>[图片来源: <a href="https://www.cryptocompare.com/wallets/guides/how-do-digital-signatures-in-bitcoin-work/" target="_blank" rel="external">https://www.cryptocompare.com/wallets/guides/how-do-digital-signatures-in-bitcoin-work/</a>]</p>
 <h4 id="ECDSA-Elliptic-Curve-Digital-Signature-Algorithm-椭圆曲线算法"><a href="#ECDSA-Elliptic-Curve-Digital-Signature-Algorithm-椭圆曲线算法" class="headerlink" title="ECDSA (Elliptic Curve Digital Signature Algorithm 椭圆曲线算法)"></a>ECDSA (Elliptic Curve Digital Signature Algorithm 椭圆曲线算法)</h4><ul>
 <li>What ECDSA does is to provide a method for computing a public key from the private key in a non-invertible fashion (也就是说，我们可以通过ECDSA算法计算出一个私钥对应的公钥，但是不能通过已知公钥算出对应的私钥-要找也只能Brute Force)</li>
 <li>Private key is a 256 bit long number chosen by Alice</li>
 </ul>
 <h5 id="Elliptic-curves"><a href="#Elliptic-curves" class="headerlink" title="Elliptic curves"></a>Elliptic curves</h5><p>An elliptic curve is represented algebraically as an equation of the form:<br><strong>$$y^2 = x^3 + ax + b$$</strong><br>For a = 0 and b = 7 (the version used by bitcoin), it looks like this:<br><strong>$$y^2 = x^3 + 7$$</strong></p>
+<p><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/BlockChain/4.png" alt="image"></p>
 <p>Elliptic curves有一些有用的特性</p>
 <ul>
 <li>曲线上两个非切点的非垂直于坐标轴的连线必定与曲线相交于另一点</li>
 <li>曲线上一点的不与坐标轴垂直切线一定与曲线相较于另一点。<br>由此两个特性，可以定义如下运算。</li>
 </ul>
-<h5 id="Point-addition-Point-doubling-and-Scalar-multiplication"><a href="#Point-addition-Point-doubling-and-Scalar-multiplication" class="headerlink" title="Point addition, Point doubling and Scalar multiplication"></a>Point addition, Point doubling and Scalar multiplication</h5><p>1.Point addition<br><img src="http://note.youdao.com/favicon.ico" alt="image"></p>
-<p>$$P+Q=R$$<br>P和Q连线与曲线交点关于x轴的对称点<br>2.Point doubling<br><img src="http://note.youdao.com/favicon.ico" alt="image"></p>
+<h5 id="Point-addition-Point-doubling-and-Scalar-multiplication"><a href="#Point-addition-Point-doubling-and-Scalar-multiplication" class="headerlink" title="Point addition, Point doubling and Scalar multiplication"></a>Point addition, Point doubling and Scalar multiplication</h5><p>1.Point addition<br><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/BlockChain/5.png" alt="image"></p>
+<p>$$P+Q=R$$<br>P和Q连线与曲线交点关于x轴的对称点<br>2.Point doubling<br><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/BlockChain/6.png" alt="image"></p>
 <p>$$P+P=R$$<br>P的切线与曲线交点关于x轴的对称点<br>3.Scalar multiplication<br>计算$$R=7P$$并不需要7次加法。<br>$$R=7P=P+2(P+2P)$$<br>总共其实只需要4次运算。</p>
 <h4 id="Finite-fields-有限域"><a href="#Finite-fields-有限域" class="headerlink" title="Finite fields (有限域)"></a>Finite fields (有限域)</h4><p>曲线是无限的，但是我们期望所得到的点是落在有限的区域里，最简单的方法就是模运算。<br>如图则是将x, y mod 67的结果。这样所有点都落在66*66的空间里（还是关于某个与原x轴平行的线对称的）</p>
-<p><img src="http://note.youdao.com/favicon.ico" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/BlockChain/7.png" alt="image"></p>
 <p>那么上述的加法操作要怎么进行呢?<br>采取的方法是保证两点连线的斜率不发生变化，水平和上下移动直到碰到一个点。<br>再取该点的对称点。如下图所示</p>
-<p><img src="http://note.youdao.com/favicon.ico" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/Jade-Jade-Jade/Jade-Jade-Jade.github.io/master/image/BlockChain/8.png" alt="image"></p>
+<h4 id="签名步骤"><a href="#签名步骤" class="headerlink" title="签名步骤"></a>签名步骤</h4><ul>
+<li>Base point G= 04 79BE667E F9DCBBAC 55A06295 CE870B07 029BFCDB 2DCE28D9 59F2815B 16F81798 483ADA77 26A3C465 5DA4FBFC 0E1108A8 FD17B448 A6855419 9C47D08F FB10D4B8</li>
+<li>public key = private key * base point</li>
+<li>Alice hashes the message. The hash is z.</li>
+</ul>
+<p><strong>签名过程</strong></p>
+<ol>
+<li>Choose some random (or deterministic) integer k between 1 and n - 1. (n is called order - FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE BAAEDCE6 AF48A03B BFD25E8C D0364141)</li>
+<li>Calculate the point (x, y) = k * G, using ECDSA multiplication.</li>
+<li>Find r = x mod n. If r = 0, return to step 1.</li>
+<li>Find s = (z + r * d) / k mod n. If s = 0, return to step 1.</li>
+<li>The signature is the pair (r, s)</li>
+</ol>
+<h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>Q是public key, 其他字符和上面代表的一样</p>
+<ol>
+<li>Verify that r and s are between 1 and n - 1.</li>
+<li>Calculate w = s-1 mod n</li>
+<li>Calculate u = z * w mod n</li>
+<li>Calculate v = r * w mod n</li>
+<li>Calculate the point (x, y) = uG + vQ</li>
+<li>Verify that r = x mod n. The signature is invalid if it is not.</li>
+</ol>
+<p>参考资料: </p>
+<ul>
+<li><a href="https://www.coindesk.com/math-behind-bitcoin/" target="_blank" rel="external">https://www.coindesk.com/math-behind-bitcoin/</a></li>
+<li><a href="http://www.ehcoo.com/Bitcoin_ECDSA.html" target="_blank" rel="external">http://www.ehcoo.com/Bitcoin_ECDSA.html</a></li>
+</ul>
 
           
         
