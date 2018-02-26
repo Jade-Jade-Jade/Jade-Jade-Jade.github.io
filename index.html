@@ -324,6 +324,212 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/区块链学习笔记4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jade-Jade-Jade">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jade-Jade-Jade">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/25/区块链学习笔记4/" itemprop="url">区块链学习笔记4</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T21:39:45-08:00">
+                2018-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/区块链/" itemprop="url" rel="index">
+                    <span itemprop="name">区块链</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<blockquote>
+<p>Digital Signature 数字签名</p>
+</blockquote>
+<h4 id="什么是数字签名"><a href="#什么是数字签名" class="headerlink" title="什么是数字签名"></a>什么是数字签名</h4><p>考虑这样的一个场景:<br>Alice 想给 Bob 发送一个信息。</p>
+<ul>
+<li>Alice把信息放在一个信封里</li>
+<li>Alice用自己的印章封住了信封</li>
+</ul>
+<p>所有人都可以通过检查封印知道:<br>这封信来自于Alice,因为印章是Alice的。<br>同时可以通过查看封印是否完好得知信息有无被修改。</p>
+<p>Digital Signature就是想实现同样的功能。</p>
+<p>更贴近现实生活的一个例子是支票。</p>
+<h4 id="公钥和私钥对"><a href="#公钥和私钥对" class="headerlink" title="公钥和私钥对"></a>公钥和私钥对</h4><p>在编码学中我们用公钥(Public Key)和私钥(Private Key)对来实现数字签名协议</p>
+<ul>
+<li>Priate key 用于签名(发送者才有, 不可以公开)</li>
+<li>Public key 用于验证(所有人都可以验证，是公开的)</li>
+<li>每一个文件都有独特的签名(签名是跟着文件才生效的，就像日常中你不能把一个地方的签名减下来贴到另一个地方)</li>
+</ul>
+<h4 id="数字签名的工作流程"><a href="#数字签名的工作流程" class="headerlink" title="数字签名的工作流程"></a>数字签名的工作流程</h4><ol>
+<li>Create Keys</li>
+</ol>
+<ul>
+<li>Alice生成一定大小的私钥</li>
+<li>Alice用私钥生成公钥</li>
+</ul>
+<ol>
+<li>Create Signature</li>
+</ol>
+<ul>
+<li>Alice用私钥给meesage签名</li>
+<li>Alice将签名, message和Public Key发送给Bob</li>
+</ul>
+<ol>
+<li>Verify</li>
+</ol>
+<ul>
+<li>Bob用签名, message和public key验证Alice一定拥有对应的私钥。</li>
+<li>因此Alice是一个友善的发出者</li>
+</ul>
+<p><img src="https://www.cryptocompare.com/media/1284/digital_signature.png" alt="image"></p>
+<p>[图片来源: <a href="https://www.cryptocompare.com/wallets/guides/how-do-digital-signatures-in-bitcoin-work/" target="_blank" rel="external">https://www.cryptocompare.com/wallets/guides/how-do-digital-signatures-in-bitcoin-work/</a>]</p>
+<h4 id="ECDSA-Elliptic-Curve-Digital-Signature-Algorithm-椭圆曲线算法"><a href="#ECDSA-Elliptic-Curve-Digital-Signature-Algorithm-椭圆曲线算法" class="headerlink" title="ECDSA (Elliptic Curve Digital Signature Algorithm 椭圆曲线算法)"></a>ECDSA (Elliptic Curve Digital Signature Algorithm 椭圆曲线算法)</h4><ul>
+<li>What ECDSA does is to provide a method for computing a public key from the private key in a non-invertible fashion (也就是说，我们可以通过ECDSA算法计算出一个私钥对应的公钥，但是不能通过已知公钥算出对应的私钥-要找也只能Brute Force)</li>
+<li>Private key is a 256 bit long number chosen by Alice</li>
+</ul>
+<h5 id="Elliptic-curves"><a href="#Elliptic-curves" class="headerlink" title="Elliptic curves"></a>Elliptic curves</h5><p>An elliptic curve is represented algebraically as an equation of the form:<br><strong>$$y^2 = x^3 + ax + b$$</strong><br>For a = 0 and b = 7 (the version used by bitcoin), it looks like this:<br><strong>$$y^2 = x^3 + 7$$</strong></p>
+<p>Elliptic curves有一些有用的特性</p>
+<ul>
+<li>曲线上两个非切点的非垂直于坐标轴的连线必定与曲线相交于另一点</li>
+<li>曲线上一点的不与坐标轴垂直切线一定与曲线相较于另一点。<br>由此两个特性，可以定义如下运算。</li>
+</ul>
+<h5 id="Point-addition-Point-doubling-and-Scalar-multiplication"><a href="#Point-addition-Point-doubling-and-Scalar-multiplication" class="headerlink" title="Point addition, Point doubling and Scalar multiplication"></a>Point addition, Point doubling and Scalar multiplication</h5><p>1.Point addition<br><img src="http://note.youdao.com/favicon.ico" alt="image"></p>
+<p>$$P+Q=R$$<br>P和Q连线与曲线交点关于x轴的对称点<br>2.Point doubling<br><img src="http://note.youdao.com/favicon.ico" alt="image"></p>
+<p>$$P+P=R$$<br>P的切线与曲线交点关于x轴的对称点<br>3.Scalar multiplication<br>计算$$R=7P$$并不需要7次加法。<br>$$R=7P=P+2(P+2P)$$<br>总共其实只需要4次运算。</p>
+<h4 id="Finite-fields-有限域"><a href="#Finite-fields-有限域" class="headerlink" title="Finite fields (有限域)"></a>Finite fields (有限域)</h4><p>曲线是无限的，但是我们期望所得到的点是落在有限的区域里，最简单的方法就是模运算。<br>如图则是将x, y mod 67的结果。这样所有点都落在66*66的空间里（还是关于某个与原x轴平行的线对称的）</p>
+<p><img src="http://note.youdao.com/favicon.ico" alt="image"></p>
+<p>那么上述的加法操作要怎么进行呢?<br>采取的方法是保证两点连线的斜率不发生变化，水平和上下移动直到碰到一个点。<br>再取该点的对称点。如下图所示</p>
+<p><img src="http://note.youdao.com/favicon.ico" alt="image"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/01/区块链学习笔记3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1939,162 +2145,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/19/挖坑之非自用着装攻略-男青年/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jade-Jade-Jade">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jade-Jade-Jade">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/19/挖坑之非自用着装攻略-男青年/" itemprop="url">挖坑之非自用着装攻略-男青年</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T22:52:17-07:00">
-                2017-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/寻常日/" itemprop="url" rel="index">
-                    <span itemprop="name">寻常日</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>我自己本身也很喜欢男装的简洁和大方，逛起来都差不多，不像女孩子的衣服看起来眼花缭乱…<br>鉴于身边男性程序员朋友很多，决定写一个男装搭配的小博文。<br>我希望文章可以让大部分普通的男孩子收益，大长腿大高个身材好的就自己随便搭配吧，感觉都不会丑到哪里去…..<br>— 题记</p>
-</blockquote>
-<h4 id="准则"><a href="#准则" class="headerlink" title="准则"></a>准则</h4><ol>
-<li>衣服不要皱不要皱不要皱，不要穿皱皱的外套，皱皱的t恤。<br> 关于衣服皱这个，洗完衣服好好展开。然后买衣服的时候注意一下质量！</li>
-<li>头发不要油. 不用打摩丝什么的，就清清爽爽就好。</li>
-<li>脸也不要太油光泛滥了，用些洗面奶就可以，基本的护肤还是需要的我觉得。</li>
-<li>背不要弯。</li>
-<li>有的男孩子肩膀窄，我不喜欢肩膀窄的男孩穿软塌塌的那种外套。。就显得更窄了没有男友力囧。</li>
-<li>建议衣服自己按照一套套的搭配好，或者按照对应的关系搭配。比如自己会清楚的知道买这个裤子有哪些上衣配。这样很节约时间。</li>
-</ol>
-<h4 id="品牌推荐"><a href="#品牌推荐" class="headerlink" title="品牌推荐"></a>品牌推荐</h4><h4 id="一年四季篇"><a href="#一年四季篇" class="headerlink" title="一年四季篇"></a>一年四季篇</h4><p><a href="https://www.zhihu.com/question/58162135" target="_blank" rel="external">https://www.zhihu.com/question/58162135</a></p>
-<h5 id="亮色"><a href="#亮色" class="headerlink" title="亮色"></a>亮色</h5><p>我发现好多男孩子都喜欢亮色 - 橙色，黄色，蓝色为主！而且都是那种颜色十分纯的！记得以前美术老师和我们说，一般小孩子都很喜欢这种纯度很高的颜色，长大了会喜欢有点灰度的。哈哈哈，如果你喜欢纯色！说明你有个大大的童心:)</p>
-<p>知乎里很多帖子都是黑白灰走气质路线。不过我们也不能为了帅气就抛弃自己挚爱的骚气! 我自己觉得纯色是一种很可爱的颜色！尤其是那种平时很正经突然来一个亮色，有一种十分活泼的感觉！</p>
-<p>一般我没见到太多人穿纯彩色的裤子，一般都是外套和t恤占多数。还有骚气外露的各种鞋子。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2145,7 +2195,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
